@@ -4,9 +4,9 @@
 
 
 # configure
-use constant TEMPLATE => '/home/emorgan/etc/directory.htm';
-use constant TABLE    => '/home/emorgan/etc/table.tsv';
-use constant VIEW     => "<a href='/library/##SHORTNAME##/index.htm'>view</a>";
+use constant TEMPLATE => './etc/directory.htm';
+use constant TABLE    => './etc/table.tsv';
+use constant VIEW     => "<a href='/library/##SHORTNAME##/'>view</a>";
 use constant DOWNLOAD => "<a href='/library/##SHORTNAME##/study-carrel.zip'>download</a>";
 
 # require
