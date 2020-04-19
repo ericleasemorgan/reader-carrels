@@ -1,0 +1,5 @@
+LONGNAME	Angel
+SCOPENOTE	This carrel -- Angel -- was created with content from the HathiTrust. More specifically, a query for subject=metaphysics and year&lt;1923 was first applied to <a href="https://www.worldcat.org">WorldCat</a>. The resulting OCLC numbers were extracted from the results, and then applied to the <a href="https://www.hathitrust.org">HathiTrust</a>. The resulting items were then downloaded along with their metadata. Finally, the result was zipped up and sent to the Reader. All of this was done with a toolbox called "<a href="https://github.com/ericleasemorgan/worldcat2texts">WorldCat2Text</a>". This is a part of series of carrels intended to highlight the <a href="https://www.thegreatideas.org">Great Ideas</a>.</p><p><a href="./study-carrel.zip">Download this study carrel</a> for off-line viewing, and <a href="./MANIFEST.htm">read the manifest</a> to learn what the carrel contains. TL;DNR? <a href="./standard-output.txt">Try the simple report</a>.
+CREATOR	Eric Lease Morgan
+EMAIL	emorgan@nd.edu
+CREATIONDATE	April 18, 2020
