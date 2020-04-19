@@ -1,0 +1,5 @@
+LONGNAME	Wisdom
+SCOPENOTE	This carrel consists of documents classified as being about sin. It is a part of a series of carrels based on the Great Ideas.
+CREATOR	Eric Lease Morgan
+EMAIL	emorgan@nd.edu
+CREATIONDATE	April 18, 2020

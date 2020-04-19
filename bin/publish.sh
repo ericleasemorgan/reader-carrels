@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # configure
-LIBRARY='/export/www/html/library'
-CARRELS='/export/reader/carrels/'
+LIBRARY='./library'
+CARRELS='/export/reader/carrels'
 
 # sanity check
 if [[ -z $1 || -z $2 ]]; then
@@ -15,7 +15,7 @@ PROCESS=$1
 SHORTNAME=$2
 
 # change ownership
-sudo chown -R centos "$CARRELS/$PROCESS"
+sudo chown -R emorgan "$CARRELS/$PROCESS"
 
 # add the item to the library
 cd $LIBRARY
