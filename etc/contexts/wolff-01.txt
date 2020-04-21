@@ -1,0 +1,5 @@
+LONGNAME	WOLFF-01
+SCOPENOTE	This is the first of two study carrel containing content derived from a set of survey responses from librries and pertaining to COVID-19.</p><p><a href="./study-carrel.zip">Download this study carrel</a> for off-line viewing, and <a href="./MANIFEST.htm">read the manifest</a> to learn what the carrel contains. TL;DNR? <a href="./standard-output.txt">Try the simple report</a>.
+CREATOR	Eric Lease Morgan
+EMAIL	emorgan@nd.edu
+CREATIONDATE	April 21, 2020
