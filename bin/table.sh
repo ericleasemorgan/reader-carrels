@@ -1,20 +1,25 @@
 #!/usr/bin/env bash
 
 # configure
-LIBRARY='/export/www/html/library'
+LIBRARY='/data-disk/www/html/library/carrels/'
 DB='etc/reader.db'
 ZIP='study-carrel.zip';
 
 # process each study carrel in the library
-find $LIBRARY -type l | while read CARREL; do
+find $LIBRARY -maxdepth 1 -type d | while read CARREL; do
 
 	# compute
 	SHORTNAME=$( basename $CARREL )
+	
+	if [[ $SHORTNAME == 'carrels' ]]; then
+		continue
+	fi
+	
 	ITEMS=$( echo "SELECT COUNT( id ) FROM bib;" | sqlite3 "$CARREL/$DB" )
 	WORDS=$( echo "SELECT SUM( words ) FROM bib;" | sqlite3 "$CARREL/$DB" )
-	FLESCH=$( echo "SELECT RTRIM( ROUND( AVG( flesch ) ), '.0' ) FROM bib;" | sqlite3 "$CARREL/$DB" )
-	KEYWORDS=$( echo "SELECT keyword FROM wrd GROUP BY keyword ORDER BY COUNT( keyword ) DESC LIMIT 3;" | sqlite3 "$CARREL/$DB" )
-	SIZE=$( du "$CARREL/$ZIP" | cut -f1 )
+	FLESCH=$( echo "SELECT CAST ( AVG( flesch ) AS INTEGER ) FROM bib;" | sqlite3 "$CARREL/$DB" )
+	KEYWORDS=$( echo "SELECT keyword FROM wrd GROUP BY keyword ORDER BY COUNT( keyword ) DESC LIMIT 5;" | sqlite3 "$CARREL/$DB" )
+	SIZE=$( du -b "$CARREL/$ZIP" | cut -f1 )
 	DATE=$( stat --printf='%z' $CARREL | cut -d ' ' -f1 )
 
 	# format outputs

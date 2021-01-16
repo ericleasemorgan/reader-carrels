@@ -4,10 +4,11 @@
 
 
 # configure
-use constant TEMPLATE => './etc/directory.htm';
-use constant TABLE    => './etc/table.tsv';
-use constant VIEW     => "<a href='/library/##SHORTNAME##/'>view</a>";
-use constant DOWNLOAD => "<a href='/library/##SHORTNAME##/study-carrel.zip'>download</a>";
+use constant TEMPLATE => './etc/template.htm';
+use constant TABLE    => './etc/catalog.tsv';
+use constant BROWSE   => "<a href='/carrels/##SHORTNAME##/'>browse</a>";
+use constant READ     => "<a href='/carrels/##SHORTNAME##/index.htm'>read</a>";
+use constant DOWNLOAD => "<a href='/carrels/##SHORTNAME##/study-carrel.zip'>download</a>";
 
 # require
 use strict;
@@ -25,13 +26,15 @@ while ( <TSV> ) {
 	my( $shortname, $date, $keyword, $items, $words, $flesch, $size ) = split( "\t", $_ );
 	
 	# build a link to the given study carrel
-	my $view     =  VIEW;
-	$view        =~ s/##SHORTNAME##/$shortname/eg;
+	my $browse   =  BROWSE;
+	$browse      =~ s/##SHORTNAME##/$shortname/eg;
+	my $read     =  READ;
+	$read        =~ s/##SHORTNAME##/$shortname/eg;
 	my $download =  DOWNLOAD;
 	$download    =~ s/##SHORTNAME##/$shortname/eg;
 	
 	# build the row and update the list of them
-	my $row = "<tr><td>$shortname ($view, $download)</td><td>$date</td><td>$keyword</td><td class='right'>$items</td><td class='right'>$words</td><td  class='right'>$flesch</td><td class='right'>$size</td></tr>";
+	my $row = "<tr><td>$shortname</td><td>$date</td><td>$keyword</td><td class='right'>$items</td><td class='right'>$words</td><td  class='right'>$flesch</td><td class='right'>$size</td><td class='right'>$read, $browse, $download</td></tr>";
 	push( @rows, $row );
 	
 }
